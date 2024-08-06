@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #333;
+    border-bottom: 20px solid #56e274;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.hero {
+    position: absolute;
+    width: 120px;
+    /*The hero is at the ground at position: bottom: -15px*/
+    /*hero maximum high = bottom: 200px*/
+    bottom: -15px;
+    
+}
+
+.jump {
+    animation: jump 800ms ease-in-out;
+}
+
+.enemy {
+    position: absolute;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    bottom: -40px;
+    animation: enemy-animation 2.5s infinite linear;
+}
+
+.clouds {
+    position: absolute;
+    width: 600px;
+    animation: clouds-animation 5s infinite linear;
+}
+
+.score {
+    font-family: arial, sans-serif;
+    color: #f05b4a;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2.5em;
+}
+
+@keyframes enemy-animation {
+    from {
+        right: -256px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: -15px;
+    }
+
+    40% {
+        bottom: 200px;
+    }
+
+    50% {
+        bottom: 200px;
+    }
+
+    60% {
+        bottom: 200px;
+    }
+
+    100% {
+        bottom: -15px;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -600px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
